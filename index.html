@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranav Pawar Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+<!-- ✨ PARALLAX STAR BACKGROUND — fixed, full-screen, always visible -->
+<div class="parallax-bg">
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+</div>
+
+<!-- 🔥 NAVBAR -->
+<header>
+  <nav class="navbar">
+    <h2 class="logo" id="logoText"></h2>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">👤 About</a></li>
+      <li><a href="#skills">🛠 Skills</a></li>
+      <li><a href="#projects">🚀 Projects</a></li>
+      <li><a href="#creative">🎨 Creative</a></li>
+      <li><a href="#contact">📩 Contact</a></li>
+      <li><a href="#experience">💼 Experience</a></li>
+      <li><a href="#education">🎓 Education</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menuToggle">☰</div>
+  </nav>
+</header>
+
+<!-- 🔥 HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm Pranav  👋</h1>
+
+    <p class="typing">
+      <span id="role"></span>
+    </p>
+
+    <p class="hero-desc">
+      I build AI-powered apps & real-world systems.
+    </p>
+  </div>
+</section>
+
+<!-- 🔥 ABOUT -->
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+I'm a Computer Science student passionate about building real-world applications that solve practical problems. 
+I enjoy turning ideas into working products — from an AI-based retina disease detection system to an adaptive AI game that evolves with player behavior.
+
+I have experience with <span class="highlight">Python</span>,
+<span class="highlight">JavaScript</span>,
+<span class="highlight">React</span>, and <span class="highlight">Node.js</span>, and concepts in AI and full-stack development. 
+Along the way, I've learned not just how to code, but how to design systems, optimize performance, and think like a developer.
+
+What drives me is curiosity and the desire to improve. I enjoy experimenting, learning new technologies, and challenging myself with complex problems. 
+Whether it's building smarter systems, improving UI/UX, or creating something unique, I'm always looking to grow.
+
+I like to work in a clean, structured, and efficient way — focusing on both functionality and user experience. 
+My goal is to become a developer who builds impactful, scalable, and meaningful technology.
+  </p>
+
+  <div class="learning">
+    <h3>Currently Learning</h3>
+    <div class="learning-items">
+      <span>Advanced React</span>
+      <span>AI Model Optimization</span>
+      <span>System Design</span>
+      <span>Backend Scaling</span>
+    </div>
+  </div>
+</section>
+
+<!-- 🔥 SKILLS -->
+<section id="skills" class="skills">
+  <h2>Skills</h2>
+
+  <div class="skill-category">
+    <h3>Languages</h3>
+    <div class="cards">
+      <div class="card">Python</div>
+      <div class="card">JavaScript</div>
+      <div class="card">SQL</div>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Frontend</h3>
+    <div class="cards">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">React</div>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Backend</h3>
+    <div class="cards">
+      <div class="card">Node.js</div>
+      <div class="card">Express</div>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>AI & Data</h3>
+    <div class="cards">
+      <div class="card">Machine Learning</div>
+      <div class="card">Pandas</div>
+      <div class="card">NumPy</div>
+      <div class="card">Scikit-Learn</div>
+    </div>
+  </div>
+
+  <div class="skill-category">
+    <h3>Tools</h3>
+    <div class="cards">
+      <div class="card">Git</div>
+      <div class="card">GitHub</div>
+      <div class="card">VS Code</div>
+      <div class="card">Firebase</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 🔥 PROJECTS -->
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+
+  <div class="cards">
+
+    <!-- PROJECT 1 -->
+    <div class="card project-card" onclick="toggleProject(this)">
+      <div class="project-img-container">
+        <img src="assets/images/ai-game.png" class="project-img blur">
+        <div class="project-overlay">
+          <h3>AI Game System</h3>
+          <p>Adaptive AI boss that learns player behavior.</p>
+        </div>
+      </div>
+
+      <span class="status">In Progress</span>
+
+      <div class="full">
+        <p>This system uses adaptive AI to analyze player behavior and evolve difficulty dynamically.</p>
+        <div class="buttons">
+          <a href="#" onclick="event.stopPropagation()">GitHub</a>
+          <a href="#" onclick="event.stopPropagation()">Live</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="card project-card" onclick="toggleProject(this)">
+      <div class="project-img-container">
+        <img src="assets/images/retina.png" class="project-img">
+        <div class="project-overlay">
+          <h3>Retina Disease Classification</h3>
+          <p>AI-based web app for retinal disease detection.</p>
+        </div>
+      </div>
+
+      <span class="status">Completed</span>
+
+      <div class="full">
+        <p>Deep learning based system that analyzes retinal images and detects diseases with high accuracy.</p>
+        <div class="buttons">
+          <a href="https://github.com/pranavpawar3016-collab/retina-disease-classification" target="_blank" onclick="event.stopPropagation()">GitHub</a>
+          <a href="https://retina-disease-classification.onrender.com" target="_blank" onclick="event.stopPropagation()">Live</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="card project-card" onclick="toggleProject(this)">
+      <div class="project-img-container">
+        <img src="assets/images/max-gamers.png" class="project-img blur">
+        <div class="project-overlay">
+          <h3>MAX GAMERS Web App</h3>
+          <p>Gaming café management system.</p>
+        </div>
+      </div>
+
+      <span class="status">In Progress</span>
+
+      <div class="full">
+        <p>A full system to manage bookings, sessions, billing, and staff for gaming cafés.</p>
+        <div class="buttons">
+          <a href="#" onclick="event.stopPropagation()">GitHub</a>
+          <a href="#" onclick="event.stopPropagation()">Live</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="card project-card featured-project" onclick="toggleProject(this)">
+      <div class="project-img-container">
+        <img src="assets/images/pixi.png" class="project-img blur">
+        <div class="project-overlay">
+          <h3>Pixi AI Companion</h3>
+          <p>Pixel-style AI friend with memory & personality.</p>
+        </div>
+      </div>
+
+      <div class="featured-badge">⭐ Featured Project</div>
+      <span class="status">In Development</span>
+
+      <div class="full">
+        <p>
+          Pixi is an AI-powered digital companion designed to help users stay productive,
+          organized, and motivated. It features memory, moods, reminders,
+          daily check-ins, document understanding, and customizable pixel characters.
+        </p>
+        <div class="buttons">
+          <a href="#" onclick="event.stopPropagation()">GitHub</a>
+          <a href="#" onclick="event.stopPropagation()">Coming Soon</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🔥 EXPERIENCE -->
+<section id="experience" class="experience">
+  <h2>Experience</h2>
+
+  <div class="experience-grid">
+
+    <div class="card experience-card">
+      <h3>AI Intern</h3>
+      <h4>SmartInternz</h4>
+      <p>
+        Worked on AI learning modules and project-oriented tasks,
+        gaining hands-on experience with machine learning workflows.
+      </p>
+    </div>
+
+    <div class="card experience-card">
+      <h3>Data Visualization Intern</h3>
+      <h4>MintEdge</h4>
+      <p>
+        Created dashboards, analytical reports, and visualized datasets
+        to generate meaningful business insights.
+      </p>
+    </div>
+
+    <div class="card experience-card">
+      <h3>Machine Learning Intern</h3>
+      <h4>SkillCraft Technology</h4>
+      <p>
+        Worked on machine learning concepts, data preprocessing,
+        model training, and predictive analytics.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🔥 EDUCATION -->
+<section id="education" class="education">
+  <h2>Education</h2>
+
+  <div class="experience-grid">
+
+    <div class="card">
+      <h3>B.Sc Computer Science</h3>
+      <p>CGPA: <strong>9.27</strong></p>
+    </div>
+
+    <div class="card">
+      <h3>MAH MCA CET</h3>
+      <p>Score: <strong>93 Percentile</strong></p>
+    </div>
+
+  </div>
+</section>
+<!-- 🔥 CREATIVE -->
+<section id="creative" class="creative">
+  <h2>Creative Work</h2>
+
+  <div class="creative-grid">
+
+    <div class="creative-card">
+      <video class="creative-video" autoplay muted loop playsinline>
+        <source src="assets/videos/video.mov" type="video/mp4">
+      </video>
+
+      <div class="creative-content">
+        <h3>Cinematic Videos</h3>
+        <p>Travel edits & storytelling visuals.</p>
+        <a href="http://www.youtube.com/@travel-with-Mii" target="_blank">Watch</a>
+      </div>
+    </div>
+    
+    <div class="creative-card">
+      <img src="assets/images/insta.png" class="creative-img">
+
+      <div class="creative-content">
+        <h3>Instagram</h3>
+        <p>Short cinematic edits & creative reels.</p>
+        <a href="https://www.instagram.com/this._.is_pranav" target="_blank">View Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🔥 CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>Let's build something amazing together.</p>
+
+  <div class="contact-buttons">
+
+    <a href="https://github.com/pranavpawar3016-collab" target="_blank" class="contact-btn">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      <span>GitHub</span>
+    </a>
+
+    <a href="https://www.linkedin.com/in/pranav-pawar-78181a283" target="_blank" class="contact-btn">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
+      <span>LinkedIn</span>
+    </a>
+
+    <a href="mailto:pranavpawar3016@gmail.com" class="contact-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+      <span>Email</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- 🤖 GUIDE ROBOT — main scroll-based NPC (r1) -->
+<div class="robot r1 guide-robot" id="guideRobot">
+  <img src="assets/images/space1_transparent.gif" id="guideRobotImg">
+  <div class="speech" id="guideSpeech">Hey 👋</div>
+</div>
+
+<!-- 🤖 AMBIENT ROBOTS — decorative, random wandering (r2, r3) -->
+<div class="robot r2" data-robot>
+  <img src="assets/images/space3_transparent.gif">
+  <div class="speech">Check projects 🚀</div>
+</div>
+
+<div class="robot r3" data-robot>
+  <img src="assets/images/transparent_1.png">
+  <div class="speech">Nice UI 😎</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
